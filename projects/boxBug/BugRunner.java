@@ -16,8 +16,8 @@
  * @author Barbara Cloud Wells
  */
 
-import info.gridworld.actor.ActorWorld;
-import info.gridworld.grid.Location;
+import info.gridworld.actor.*;
+import info.gridworld.grid.*;
 
 import java.awt.Color;
 
@@ -25,14 +25,16 @@ import java.awt.Color;
  * This class runs a world that contains box bugs. <br />
  * This class is not tested on the AP CS A and AB exams.
  */
-public class BoxBugRunner
+public class BugRunner
 {
     public static void main(String[] args)
     {
-        ActorWorld world = new ActorWorld();
-        BoxBug alice = new BoxBug(6);
+        ActorWorld world = new ActorWorld(new UnboundedGrid<Actor>());
+        
+        int[] a = {1, 1, 3, 5}, b = {4, 2, 5, 3};
+        DancingBug alice = new DancingBug(a);
         alice.setColor(Color.ORANGE);
-        BoxBug bob = new BoxBug(3);
+        DancingBug bob = new DancingBug(b);
         world.add(new Location(7, 8), alice);
         world.add(new Location(5, 5), bob);
         world.show();
