@@ -37,7 +37,8 @@ public class ChameleonCritter extends Critter
     {
         int n = actors.size();
         if (n == 0)
-            return;
+            {super.setColor(super.getColor().darker());
+            return;}
         int r = (int) (Math.random() * n);
 
         Actor other = actors.get(r);
